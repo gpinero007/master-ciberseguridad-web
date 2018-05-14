@@ -37,6 +37,13 @@
                 return false;
             }
 
+			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			
+			if (!filter.test(username)) {
+				alert("The username must be a valid email address");
+				return false;
+			}
+
             return true;
         }
     });
@@ -73,8 +80,8 @@
         </div>
 
         <div>
-            <input type="radio" name="type" value="teacher">Teacher
-            <input type="radio" name="type" value="student">Student
+            <input type="radio" id="isteacher" name="type" value="teacher">Teacher
+            <input type="radio" id="isstudent" name="type" value="student" checked>Student
         </div>
 
 
